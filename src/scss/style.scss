@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Переменные
+$tags-text-colors: (
+    #FFFFFF, #E2BD06, #E52E2E, #00B6ED, #00AE5B
+);
+
+$tags-pill-colors: (
+    #B0BCC7, #FFFDF1, #FFF8F8, #F3FCFF, #F2FFF9
+);
+
+$tags-border-colors: (
+    #B0BCC7, #E2BD06, #E52E2E, #00B6ED, #00AE5B
+);
+// ----------------------------------------------------------------------------------------------
+
+// CSS Reset
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+// ----------------------------------------------------------------------------------------------
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    background-color: #F7F8F9;
+    padding: 41px 50px 0 50px;
+}
+
+#staff {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+
+    &__list, &__filter {
+        background-color: white;
+    }
+
+    &__list {
+        grid-column: 1;
+
+        &-search {
+            border-bottom: 1px solid #DBE4ED;
+            padding: 30px 30px 56px 30px;
+
+            .search-container {
+                position: relative;
+            }
+
+            .search-input {
+                box-sizing: border-box;
+                width: 100%;
+                height: 46px;
+                padding: 0 16px;
+                border-radius: 10px;
+                border: 1px solid #E0EBEF;
+                outline: #black;
+                background-color: #F7F8F9;
+                font-size: 15px;
+            }
+
+            .search-icon {
+                position: absolute;
+                right: 14px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .search-hint {
+                span {
+                    padding: 10px 0;
+                    color: #B0BCC7;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        &-content {
+            padding: 30px 40px 60px 40px;
+
+            .content-title {
+                font-size: 26px;
+            }
+
+            .content-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 20px;
+
+                &__item {
+                    border-radius: 30px;
+                    padding: 8px 15px;
+                }
+
+                @for $i from 1 through length($tags-text-colors) {
+                    &__item:nth-child(#{$i}) {
+                        background-color: nth($tags-pill-colors, $i);
+                        color: nth($tags-text-colors, $i);
+                        border: 1px solid nth($tags-border-colors, $i);
+                    }
+                }
+            }
+
+            .content-members {
+                margin: 20px 0;
+
+                &__block {
+                    background-color: #E7F3FF;
+                    flex-direction: column;
+                    padding: 25px;
+                    border-radius: 4px;
+                    margin-bottom: 15px;
+                }
+
+                &__block:nth-last-child(1) {
+                    margin-bottom: 20px;
+                }
+
+                &__info1, &__info2, &__info3 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                &__info2 {
+                    gap: 0;
+                }
+
+                &__info3 {
+                    width: auto;
+                    display: inline-block;
+                    padding: 4px 8px 7px 8px;
+                    border-radius: 4px;
+                    color: white;
+                }
+            }
+
+            .content-button-wrapper {
+                display: flex;
+                justify-content: center;
+            }
+
+            .content-button {
+                display: inline-flex;
+                gap: 10px;
+                border: 1px solid #2A358C;
+                border-radius: 4px;
+                padding: 14px 24px;
+                color: #2A358C;
+            }
+
+        }
+
+    }
+
+    &__filter {
+        grid-column: 2;
+        border-radius: 10px;
+    }
+}

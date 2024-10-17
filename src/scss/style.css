@@ -1,0 +1,209 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  background-color: #F7F8F9;
+  padding: 41px 50px 0 50px;
+}
+
+#staff {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+}
+#staff__list, #staff__filter {
+  background-color: white;
+}
+#staff__list {
+  grid-column: 1;
+}
+#staff__list-search {
+  border-bottom: 1px solid #DBE4ED;
+  padding: 30px 30px 56px 30px;
+}
+#staff__list-search .search-container {
+  position: relative;
+}
+#staff__list-search .search-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid #E0EBEF;
+  outline: #black;
+  background-color: #F7F8F9;
+  font-size: 15px;
+}
+#staff__list-search .search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#staff__list-search .search-hint span {
+  padding: 10px 0;
+  color: #B0BCC7;
+  font-size: 13px;
+}
+#staff__list-content {
+  padding: 30px 40px 60px 40px;
+}
+#staff__list-content .content-title {
+  font-size: 26px;
+}
+#staff__list-content .content-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+#staff__list-content .content-tags__item {
+  border-radius: 30px;
+  padding: 8px 15px;
+}
+#staff__list-content .content-tags__item:nth-child(1) {
+  background-color: #B0BCC7;
+  color: #FFFFFF;
+  border: 1px solid #B0BCC7;
+}
+#staff__list-content .content-tags__item:nth-child(2) {
+  background-color: #FFFDF1;
+  color: #E2BD06;
+  border: 1px solid #E2BD06;
+}
+#staff__list-content .content-tags__item:nth-child(3) {
+  background-color: #FFF8F8;
+  color: #E52E2E;
+  border: 1px solid #E52E2E;
+}
+#staff__list-content .content-tags__item:nth-child(4) {
+  background-color: #F3FCFF;
+  color: #00B6ED;
+  border: 1px solid #00B6ED;
+}
+#staff__list-content .content-tags__item:nth-child(5) {
+  background-color: #F2FFF9;
+  color: #00AE5B;
+  border: 1px solid #00AE5B;
+}
+#staff__list-content .content-members {
+  margin: 20px 0;
+}
+#staff__list-content .content-members__block {
+  background-color: #E7F3FF;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+#staff__list-content .content-members__block:nth-last-child(1) {
+  margin-bottom: 20px;
+}
+#staff__list-content .content-members__info1, #staff__list-content .content-members__info2, #staff__list-content .content-members__info3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#staff__list-content .content-members__info2 {
+  gap: 0;
+}
+#staff__list-content .content-members__info3 {
+  width: auto;
+  display: inline-block;
+  padding: 4px 8px 7px 8px;
+  border-radius: 4px;
+  color: white;
+}
+#staff__list-content .content-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+#staff__list-content .content-button {
+  display: inline-flex;
+  gap: 10px;
+  border: 1px solid #2A358C;
+  border-radius: 4px;
+  padding: 14px 24px;
+  color: #2A358C;
+}
+#staff__filter {
+  grid-column: 2;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
