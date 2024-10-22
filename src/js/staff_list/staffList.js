@@ -1,10 +1,10 @@
 document.querySelector('#staff__list-content').innerHTML = `
-    <div class="content-container">
-        <h1 class="content-title">Список сотрудников</h1>
-        <div class="content-tags"></div>
-        <div class="content-members"></div>
-        <div class="content-button-wrapper">
-            <div class="content-button">
+    <div class="list__content-container">
+        <h1 class="list__content-title">Список сотрудников</h1>
+        <div class="list__content-tags"></div>
+        <div class="list__content-members"></div>
+        <div class="list__content-button-wrapper">
+            <div class="list__content-button">
                 <img src="${reload}" alt="reload-icon">
                 <span>Показать еще</span>
             </div>
@@ -15,10 +15,10 @@ import ruFlag from '/icons/ru.svg';
 import tjFlag from '/icons/tj.svg';
 import reload from '/icons/reload-icon.svg';
 
-const contentTagsContainer = document.querySelector('.content-tags');
+const contentTagsContainer = document.querySelector('.list__content-tags');
 const tags = ['Весь список', 'Проблемные', 'Критические', 'Есть замечания', 'Выполнено'];
 
-const membersContainer = document.querySelector('.content-members');
+const membersContainer = document.querySelector('.list__content-members');
 const membersInfo = [
     {
         surname: 'Константинопольский',
@@ -113,13 +113,13 @@ const membersInfo = [
 ];
 
 tags.forEach(tag => {
-    contentTagsContainer.innerHTML += `<div class="content-tags__item">${tag}</div>`;
+    contentTagsContainer.innerHTML += `<div class="list__content-tags__item">${tag}</div>`;
 });
 
 membersInfo.forEach(member => {
     membersContainer.innerHTML += `
-        <div class="content-members__block">
-            <div class="content-members__info1">
+        <div class="list__content-members__block">
+            <div class="list__content-members__info1">
                 <span style="color: #2A358C; font-size: 18px;">${member.surname} ${member.name} ${member.patronymic}</span>
                 <span style="background-color: white; color: #84909B; padding: 4px 8px; border-radius: 4px;">ИНН ${member.inn}</span>
                 <div style="display: flex; align-items: center; gap: 10px">
@@ -128,7 +128,7 @@ membersInfo.forEach(member => {
                 </div>
             </div>
 
-            <div class="content-members__info2" style="padding: 15px 0; color: ${member.completed === 'false' ? '#84909B' : 'inherit'};">
+            <div class="list__content-members__info2" style="padding: 15px 0; color: ${member.completed === 'false' ? '#84909B' : 'inherit'};">
                 <img src="${member.flag}" alt="flag-icon">
                 <span style="padding: 0 0 0 10px">${member.nationality} ${member.passport}</span>
                 <span style="margin: 0 15px; color: #CEDAE5;">|</span>
@@ -141,7 +141,7 @@ membersInfo.forEach(member => {
                 <span>Пол: ${member.sex}</span>
             </div>
 
-            <div class="content-members__info3" style="background-color: ${member.statusColor}; padding: 4px 8px 7px 8px; border-radius: 4px;">
+            <div class="list__content-members__info3" style="background-color: ${member.statusColor}; padding: 4px 8px 7px 8px; border-radius: 4px;">
                 ${member.status}
             </div>
         </div>
