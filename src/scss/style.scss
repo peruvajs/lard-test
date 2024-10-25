@@ -2,15 +2,13 @@
 
 // Переменные
 $tags-text-colors: (
-    #FFFFFF, #E2BD06, #E52E2E, #00B6ED, #00AE5B
+        #B0BCC7, #E2BD06, #E52E2E, #00B6ED, #00AE5B
 );
-
 $tags-pill-colors: (
-    #B0BCC7, #FFFDF1, #FFF8F8, #F3FCFF, #F2FFF9
+        #f7f8f9, #FFFDF1, #FFF8F8, #F3FCFF, #F2FFF9
 );
-
 $tags-border-colors: (
-    #B0BCC7, #E2BD06, #E52E2E, #00B6ED, #00AE5B
+        #B0BCC7, #E2BD06, #E52E2E, #00B6ED, #00AE5B
 );
 // ----------------------------------------------------------------------------------------------
 
@@ -161,12 +159,20 @@ body {
                 &__item {
                     border-radius: 30px;
                     padding: 8px 15px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, color 0.3s ease;
                 }
 
                 @for $i from 1 through length($tags-text-colors) {
                     &__item:nth-child(#{$i}) {
                         background-color: nth($tags-pill-colors, $i);
                         color: nth($tags-text-colors, $i);
+                        border: 1px solid nth($tags-border-colors, $i);
+                    }
+
+                    &__item:nth-child(#{$i}):hover {
+                        background-color: nth($tags-border-colors, $i);
+                        color: #FFFFFF;
                         border: 1px solid nth($tags-border-colors, $i);
                     }
                 }
@@ -213,11 +219,28 @@ body {
 
             .list__content-button {
                 display: inline-flex;
+                align-items: center;
                 gap: 10px;
                 border: 1px solid #2A358C;
+                background-color: #FFFFFF;
+                cursor: pointer;
                 border-radius: 4px;
                 padding: 14px 24px;
                 color: #2A358C;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                .list__content-button__icon {
+                    transition: filter 0.3s ease;
+                }
+
+                &:hover {
+                    background-color: #2A358C;
+                    color: #FFFFFF;
+
+                    .list__content-button__icon {
+                        filter: brightness(0) invert(1);
+                    }
+                }
             }
         }
     }
@@ -239,13 +262,29 @@ body {
                 justify-content: center;
                 align-items: center;
                 gap: 10px;
-                border: none;
+                border: 1px solid #00B6ED;
                 border-radius: 4px;
                 padding: 14px 24px;
                 color: #FFFFFF;
                 background-color: #00B6ED;
                 box-shadow: 0 10px 20px 0 rgba(0, 182, 237, 0.20);
                 cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            &__btn:hover {
+                background-color: #FFFFFF;
+                color: #00B6ED;
+
+                .staff__filter-button__icon {
+                    transition: filter 0.1s ease;
+                    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(1500%) hue-rotate(180deg) brightness(100%) contrast(100%);
+                }
+            }
+
+            &:hover {
+                background-color: #FFFFFF;
+                color: #00B6ED;
             }
         }
 
@@ -276,6 +315,10 @@ body {
                 border: 1px solid #E0EBEF;
                 color: #84909B;
                 font-size: 15px;
+
+                &.selected {
+                    color: black;
+                }
 
                 option {
                     color: black;
@@ -390,20 +433,32 @@ body {
                     padding: 14px 24px;
                     cursor: pointer;
                     text-align: center;
-                    border: none;
                     border-radius: 4px;
+                    transition: background-color 0.3s ease, color 0.3s ease;
                 }
 
                 .filter__content-btns__apply {
                     background-color: #00AE5B;
+                    border: 1px solid #00AE5B;
                     color: white;
                     box-shadow: 0 10px 20px 0 rgba(0, 174, 91, 0.20);
+
+                    &:hover {
+                        background-color: #FFFFFF;
+                        color: #00AE5B;
+                    }
                 }
 
                 .filter__content-btns__clear {
                     background-color: #84909B;
+                    border: 1px solid #84909B;
                     color: white;
                     box-shadow: 0 10px 20px 0 rgba(106, 117, 128, 0.20);
+
+                    &:hover {
+                        background-color: #FFFFFF;
+                        color: #84909B;
+                    }
                 }
             }
         }

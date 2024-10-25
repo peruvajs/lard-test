@@ -59,3 +59,13 @@ document.querySelector('#staff__filter-content').innerHTML = `
         <button type="button" class="filter__content-btns__clear">Очистить</button>
     </div>
 `
+
+document.querySelectorAll('.filter-content__select').forEach(select => {
+    select.addEventListener('change', function () {
+        if (this.value !== "") {
+            this.classList.add('selected');
+        } else {
+            this.classList.remove('selected');
+        }
+    });
+});
