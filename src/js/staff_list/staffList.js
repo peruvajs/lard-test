@@ -4,10 +4,10 @@ document.querySelector('#staff__list-content').innerHTML = `
         <div class="list__content-tags"></div>
         <div class="list__content-members"></div>
         <div class="list__content-button-wrapper">
-            <div class="list__content-button">
-                <img src="${reload}" alt="reload-icon">
-                <span>Показать еще</span>
-            </div>
+            <button type="button" class="list__content-button">
+                <img src="${reload}" alt="reload-icon" class="list__content-button__icon">
+                Показать ещё
+            </button>
         </div>
     </div>
 `
@@ -113,7 +113,7 @@ const membersInfo = [
 ];
 
 tags.forEach(tag => {
-    contentTagsContainer.innerHTML += `<div class="list__content-tags__item">${tag}</div>`;
+    contentTagsContainer.innerHTML += `<button type="button" class="list__content-tags__item">${tag}</button>`;
 });
 
 membersInfo.forEach(member => {
