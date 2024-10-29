@@ -175,6 +175,10 @@ body {
                         color: #FFFFFF;
                         border: 1px solid nth($tags-border-colors, $i);
                     }
+                    &__item:nth-child(#{$i}).active {
+                        background-color: nth($tags-border-colors, $i); // Use appropriate color here
+                        color: #FFFFFF;
+                    }
                 }
             }
 

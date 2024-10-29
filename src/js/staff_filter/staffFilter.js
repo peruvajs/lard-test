@@ -33,22 +33,22 @@ document.querySelector('#staff__filter-content').innerHTML = `
         <h2>Тип договора</h2>
         <div class="filter-content__block3-checkboxes">
             <div class="filter-content__block3-checkboxes-wrapper">
-                <input type="checkbox" class="filter-content__block3-checkbox" id="contract1" name="contract1" value="contract1"/>
+                <input type="checkbox" class="filter-content__block3-checkbox" id="contract1" name="contract1" value="ТД"/>
                 <label for="contract1">ТД</label>
             </div>
             
             <div class="filter-content__block3-checkboxes-wrapper">
-                <input type="checkbox" class="filter-content__block3-checkbox" id="contract2" name="contract2" value="contract2"/>
+                <input type="checkbox" class="filter-content__block3-checkbox" id="contract2" name="contract2" value="ГПХ"/>
                 <label for="contract2">ГПХ</label>
             </div>
             
             <div class="filter-content__block3-checkboxes-wrapper">
-                <input type="checkbox" class="filter-content__block3-checkbox" id="contract3" name="contract3" value="contract3"/>
+                <input type="checkbox" class="filter-content__block3-checkbox" id="contract3" name="contract3" value="СМЗ"/>
                 <label for="contract3">СМЗ</label>
             </div>
             
             <div class="filter-content__block3-checkboxes-wrapper">
-                <input type="checkbox" class="filter-content__block3-checkbox" id="contract4" name="contract4" value="contract4"/>
+                <input type="checkbox" class="filter-content__block3-checkbox" id="contract4" name="contract4" value="Кандидат"/>
                 <label for="contract4">Кандидат</label>
             </div>
         </div>
